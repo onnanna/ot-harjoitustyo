@@ -1,0 +1,1 @@
+# käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka
