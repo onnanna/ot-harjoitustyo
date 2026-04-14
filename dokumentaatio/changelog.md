@@ -6,7 +6,7 @@
 - Testi sisäänkirjautumissivulle
 
 ## Viikko 4
-- Käyttäjän luominen tehty
+- Sovelluksessa voi luoda uuden käyttäjän
 - Luodulla käyttäjällä pystyy kirjautumaan sisään
 - Sovelluksesta voi kirjautua ulos
 - Pari testiä lisätty
