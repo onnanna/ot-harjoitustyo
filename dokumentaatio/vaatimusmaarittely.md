@@ -10,9 +10,9 @@ Aluksi sovelluksella on yksi käyttäjärooli, _normaalikäyttäjä_. Myöhemmin
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
-- Käyttäjä voi luoda käyttäjätunnuksen järjestelmään
+- Käyttäjä voi luoda käyttäjätunnuksen järjestelmään "tehty"
     - Käyttäjätunnuksen täytyy olla uniikki ja tietyn mittainen
-- Käyttäjä voi kirjautua järjestelmään
+- Käyttäjä voi kirjautua järjestelmään "tehty"
     - Kirjautuminen onnistuu, jos syötetään olemassaoleva käyttäjätunnus ja siihen sopiva salasana
     - Jos käyttäjää ei ole olemassa, salasana ei ole oikein tai käyttäjätunnus ei ole oikein, järjestelmä ilmoittaa tästä
 

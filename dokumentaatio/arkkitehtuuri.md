@@ -1,0 +1,1 @@
+![Luokkajapakkausrakenne](./kuvat/arkkitehtuuri-luokka-pakkauskaavio.png)

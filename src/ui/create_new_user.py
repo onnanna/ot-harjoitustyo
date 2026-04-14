@@ -1,6 +1,5 @@
 from tkinter import ttk, StringVar, constants
-from services import movies_service
-from services.movies_service import UsernameAlreadyExistsError
+from services.movies_service import movies_service, UsernameAlreadyExistsError
 
 class CreateUserView:
     def __init__(self, root, handle_show_login_view):
@@ -10,7 +9,7 @@ class CreateUserView:
         self._username_entry = None
         self._password_entry = None
         self._error_label = None
-        self.error_variable = None
+        self._error_variable = None
 
         self._initialize()
     
@@ -36,16 +35,16 @@ class CreateUserView:
             command=self._create_user_handler
         )
 
-        login_button = ttk.Button(
+        back_button = ttk.Button(
             master=self._frame,
-            text="Login",
+            text="Back",
             command=self._handle_show_login_view
         )
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
-        login_button.grid(padx=5, pady=5, sticky=constants.EW)
+        back_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self._hide_error()
     
@@ -59,7 +58,7 @@ class CreateUserView:
         self._error_label.grid_remove()
 
     def _show_error(self, message):
-        self.error_variable.set(message)
+        self._error_variable.set(message)
         self._error_label.grid()
 
     def _create_user_handler(self):
