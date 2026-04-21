@@ -8,4 +8,7 @@
 | 10.4. | 1 | korjailua aikaisemmin tehtyyn |
 | 13.4. | 3 | uuden käyttäjän luomisen tekemistä |
 | 14.4. | 5 | sisään- ja uloskirjautumisen luomista, testien tekoa, pylintin käyttöönotto ja dokumentaation päivitys|
-|yht| 16 | |
+| 19.4. | 1 | yritys korjata tietokantaa |
+| 20.4. | 3 | elokuvien lisäämisen suunnittelua ja tekoa |
+| 21.1. | 5 | aiemman korjailua, elokuvien listauksen ja lisäämisen ja arvioinnin tekoa, testien kirjoittamista, dokumentaation päivitys |
+|yht| 25 | |
