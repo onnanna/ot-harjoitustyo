@@ -1,4 +1,3 @@
-# elokuviin liittyvistä tietokantaoperaatioista vastaava luokka
 from pathlib import Path
 from entities.movies import Movies
 from repositories.user_repository import user_repository
@@ -20,14 +19,16 @@ class MoviesRepository:
                 row = row.replace("\n", "")
                 parts = row.split(";")
                 movie_id = parts[0]
-                content = parts[1]
-                seen = parts[2] == "1"
-                username = parts[3]
+                title = parts[1]
+                year = parts[2]
+                seen = parts[3] == "1"
+                username = parts[4]
+                stars = int(parts[5]) if len(parts) > 5 else 0
                 user = user_repository.find_by_username(
                     username) if username else None
 
                 movies.append(
-                    Movies(content, seen, user, movie_id)
+                    Movies(title, year, seen, user, movie_id, stars)
                 )
 
         return movies
@@ -39,8 +40,10 @@ class MoviesRepository:
             for movie in movies:
                 seen_string = "1" if movie.seen else "0"
                 username = movie.user.username if movie.user else ""
+                year = movie.year if movie.year else ""
+                stars = str(movie.stars) if movie.stars else "0"
 
-                row = f"{movie.id};{movie.content};{seen_string};{username}"
+                row = f"{movie.id};{movie.title};{year};{seen_string};{username};{stars}"
 
                 file.write(row+"\n")
 
@@ -52,6 +55,15 @@ class MoviesRepository:
         movies.append(movie)
         self._write(movies)
         return movie
+
+    def set_stars(self, movie_id, stars):
+        movies = self.find_all()
+        for movie in movies:
+            if movie.id == movie_id:
+                movie.stars = stars
+                break
+
+        self._write(movies)
 
     def set_seen(self, movie_id, seen=True):
         movies = self.find_all()
