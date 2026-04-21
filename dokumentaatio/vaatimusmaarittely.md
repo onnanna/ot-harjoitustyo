@@ -9,18 +9,18 @@ Aluksi sovelluksella on yksi käyttäjärooli, _normaalikäyttäjä_. Myöhemmin
 
 ## Perusversion tarjoama toiminnallisuus
 
-### Ennen kirjautumista
-- Käyttäjä voi luoda käyttäjätunnuksen järjestelmään "tehty"
-    - Käyttäjätunnuksen täytyy olla uniikki ja tietyn mittainen
-- Käyttäjä voi kirjautua järjestelmään "tehty"
-    - Kirjautuminen onnistuu, jos syötetään olemassaoleva käyttäjätunnus ja siihen sopiva salasana
-    - Jos käyttäjää ei ole olemassa, salasana ei ole oikein tai käyttäjätunnus ei ole oikein, järjestelmä ilmoittaa tästä
+### Ennen kirjautumist
+- "tehty" Käyttäjä voi luoda käyttäjätunnuksen järjestelmään
+    - "tehty" Käyttäjätunnuksen täytyy olla uniikki ja tietyn mittainen
+- "tehty" Käyttäjä voi kirjautua järjestelmään
+    - "tehty" Kirjautuminen onnistuu, jos syötetään olemassaoleva käyttäjätunnus ja siihen sopiva salasana
+    - "tehty" Jos käyttäjää ei ole olemassa, salasana ei ole oikein tai käyttäjätunnus ei ole oikein, järjestelmä ilmoittaa tästä
 
 ### Kirjautumisen jälkeen
-- Käyttäjä näkee luomansa listan elokuvista "tehty"
-- Käyttäjä voi lisätä listalle elokuvan "tehty"
-- Käyttäjä voi arvioida katsomansa listalla olevan elokuvan, jolloin elokuva siirtyy katsottujen elokuvien listalle "tehty"
-- Käyttäjä voi kirjautua ulos järjestelmästä "tehty"
+- "tehty" Käyttäjä näkee luomansa listan elokuvista
+- "tehty" Käyttäjä voi lisätä listalle elokuvan
+- "tehty" Käyttäjä voi arvioida katsomansa listalla olevan elokuvan, jolloin elokuva siirtyy katsottujen elokuvien listalle
+- "tehty" Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 
