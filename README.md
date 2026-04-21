@@ -2,6 +2,8 @@
 
 Sovelluksessa käyttäjä voi listata elokuvia, joita haluaa tai aikoo katsoa. Katsottuaan elokuvan käyttäjä voi arvioida itselleen elokuvan asteikolla 1-5 tähteä.
 
+Viikon 5 [ Release ](https://github.com/onnanna/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Dokumentaatio
 - [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
