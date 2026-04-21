@@ -1,5 +1,7 @@
 # Ohjelmistotekniikka, harjoitustyö Movie Watchlist
 
+Sovelluksessa käyttäjä voi listata elokuvia, joita haluaa tai aikoo katsoa. Katsottuaan elokuvan käyttäjä voi arvioida itselleen elokuvan asteikolla 1-5 tähteä.
+
 ## Dokumentaatio
 - [Vaatimusmäärittely](./dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
@@ -7,7 +9,6 @@
 - [Arkkitehtuuri](./dokumentaatio/arkkitehtuuri.md)
 
 ## Asennus
-Sovelluksessa käyttäjä voi listata elokuvia, joita haluaa tai aikoo katsoa. Katsottuaan elokuvan käyttäjä voi arvioida itselleen elokuvan asteikolla 1-5 tähteä.
 
 1. Asenna riippuvuudet:
  ```bash
