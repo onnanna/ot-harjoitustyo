@@ -16,7 +16,7 @@ def coverage(ctx):
 def coverage_report(ctx):
     ctx.run("coverage html", pty=True)
 
-@task(coverage)
+@task
 def lint(ctx):
     ctx.run("eval $(poetry env activate)", pty=True)
     ctx.run("pylint src", pty=True)
