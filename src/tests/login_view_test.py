@@ -1,5 +1,6 @@
 import unittest
 from ui.ui import UI
+from ui.login_view import LoginView
 
 class TestLoginView(unittest.TestCase):
     def setUp(self):

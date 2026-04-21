@@ -81,4 +81,7 @@ class MoviesRepository:
             lambda movie: movie.user and movie.user.username == username, movies)
         return list(user_movies)
 
+    def delete_all(self):
+        self._write([])
+
 movies_repository = MoviesRepository(MOVIES_FILE_PATH)

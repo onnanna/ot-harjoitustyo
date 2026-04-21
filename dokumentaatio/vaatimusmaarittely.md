@@ -17,10 +17,10 @@ Aluksi sovelluksella on yksi käyttäjärooli, _normaalikäyttäjä_. Myöhemmin
     - Jos käyttäjää ei ole olemassa, salasana ei ole oikein tai käyttäjätunnus ei ole oikein, järjestelmä ilmoittaa tästä
 
 ### Kirjautumisen jälkeen
-- Käyttäjä näkee luomansa listan elokuvista
-- Käyttäjä voi lisätä listalle elokuvan
-- Käyttäjä voi arvioida katsomansa listalla olevan elokuvan, jolloin elokuva siirtyy katsottujen elokuvien listalle
-- Käyttäjä voi kirjautua ulos järjestelmästä
+- Käyttäjä näkee luomansa listan elokuvista "tehty"
+- Käyttäjä voi lisätä listalle elokuvan "tehty"
+- Käyttäjä voi arvioida katsomansa listalla olevan elokuvan, jolloin elokuva siirtyy katsottujen elokuvien listalle "tehty"
+- Käyttäjä voi kirjautua ulos järjestelmästä "tehty"
 
 ## Jatkokehitysideoita
 
