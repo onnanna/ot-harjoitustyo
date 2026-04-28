@@ -40,3 +40,12 @@ class TestMoviesRepository(unittest.TestCase):
         movies_repository.set_stars(new_movie.id, 3)
         movies = movies_repository.find_all()
         self.assertEqual(movies[0].stars, 3)
+
+    def test_find_by_username(self):
+        matti = user_repository.create(self.user_matti)
+        movie = Movies("movie1", "2001", user=matti)
+        movies_repository.create(movie)
+
+        movies = movies_repository.find_by_username(matti.username)
+
+        self.assertEqual(movies[0].title, movie.title)

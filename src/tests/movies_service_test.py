@@ -17,7 +17,6 @@ class FakeMovieRepository:
         self.movies.append(movie)
         return movie
     
-
     def find_all(self):
         return self.movies
     
@@ -105,7 +104,7 @@ class TestMovieService(unittest.TestCase):
         current_user = self.movies_service.get_current_user()
         self.assertEqual(current_user.username, self.user_matti.username)
 
-    def test_create_user_with_existing_usrname(self):
+    def test_create_user_with_existing_username(self):
         username = self.user_matti.username
         self.movies_service.create_user(username, "salasana")
 
@@ -113,3 +112,29 @@ class TestMovieService(unittest.TestCase):
             UsernameAlreadyExistsError,
             lambda: self.movies_service.create_user(username, "jokumuusalasana")
         )
+    
+    def test_login_with_valid_username_and_password(self):
+        self.movies_service.create_user(
+            self.user_matti.username,
+            self.user_matti.password
+        )
+
+        user = self.movies_service.login(
+            self.user_matti.username,
+            self.user_matti.password
+        )
+        self.assertEqual(user.username, self.user_matti.username)
+
+    def test_login_with_invalid_username_and_password(self):
+        self.assertRaises(
+            InvalidCredentialsError,
+            lambda: self.movies_service.login("testaus", "väärä")
+        )
+    
+    def test_logout(self):
+        self.movies_service.create_user(self.user_matti.username, self.user_matti.password)
+        self.movies_service.login(self.user_matti.username, self.user_matti.password)
+        self.movies_service.logout()
+        
+        self.assertIsNone(self.movies_service.get_current_user())
+        

@@ -62,7 +62,10 @@ class MoviesRepository:
                 genre = movie.genre if movie.genre else ""
                 notes = movie.notes if movie.notes else ""
 
-                row = f"{movie.id};{movie.title};{year};{seen_string};{username};{stars};{genre};{notes}"
+                row = (
+                    f"{movie.id};{movie.title};{year};{seen_string};"
+                    f"{username};{stars};{genre};{notes}"
+                )
 
                 file.write(row+"\n")
 

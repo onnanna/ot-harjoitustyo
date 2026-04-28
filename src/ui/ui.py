@@ -4,6 +4,7 @@ from ui.movies_view import MoviesView
 from services.movies_service import movies_service
 
 class UI:
+    """Sovelluksen käyttöliittymästä vastaava luokka."""
     def __init__(self, root):
         self._root = root
         self._current_view = None

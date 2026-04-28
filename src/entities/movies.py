@@ -12,8 +12,17 @@ class Movies:
         genre: Merkkijonoarvo, joka kuvaa elokuvan genreä
         notes: Merkkijonoarvo, joka kuvaa elokuvan lisätietoja
         """
-    
-    def __init__(self, title, year, seen=False, user=None, movie_id=None, stars:int=0, genre=None, notes=None):
+
+    def __init__(
+            self,
+            title,
+            year,
+            seen=False,
+            user=None,
+            movie_id=None,
+            stars:int=0,
+            genre=None,
+            notes=None):
         """Luokan konstruktori, joka luo uuden elokuvan
 
         Args:
@@ -40,6 +49,7 @@ class Movies:
                 Vapaaehtoinen, oletusarvoltaan None
                 Merkkijonoarvo, joka kuvaa elokuvan lisätietoja
         """
+
         self.title = title
         self.year = year
         self.seen = seen
