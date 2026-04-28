@@ -33,3 +33,10 @@ class TestMoviesRepository(unittest.TestCase):
         movies = movies_repository.find_all()
 
         self.assertEqual(movies[0].seen, True)
+    
+    def test_set_stars(self):
+        new_movie = movies_repository.create(self.movie_1)
+        self.assertEqual(new_movie.stars, 0)
+        movies_repository.set_stars(new_movie.id, 3)
+        movies = movies_repository.find_all()
+        self.assertEqual(movies[0].stars, 3)

@@ -17,7 +17,12 @@ Viikon 5 [ Release ](https://github.com/onnanna/ot-harjoitustyo/releases/tag/vii
 poetry install
 ```
 
-2. Käynnistä sovellus:
+2. Suorita sovelluksen käyttöön alustustoimenpiteet:
+ ```bash
+poetry run invoke build
+```
+
+3. Käynnistä sovellus:
  ```bash
 poetry run invoke start
 ```
