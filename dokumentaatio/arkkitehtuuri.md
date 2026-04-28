@@ -2,7 +2,7 @@
 
 ## Rakenne
 Ohjelman rakenne noudattaa kolmitasoista kerrosarkkitehtuuria. Koodin pakkausrakenne on seuraavanlainen:
-![pakkausrakenne](./kuvat/rakenne.png)
+![pakkausrakenne](./kuvat/arkkitehtuuri-rakenne.png)
 
 Pakkaus _ui_ sisältää käyttöliittymästä, _services_ sovelluslogiikasta ja _repositories_ tietojen tallennuksesta vastaavan koodin. Pakkaus _entities_ sisältää luokkia, jotka kuvastavat sovelluksen käyttämiä tietokohteita.
 
