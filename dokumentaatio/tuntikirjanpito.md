@@ -11,4 +11,7 @@
 | 19.4. | 1 | yritys korjata tietokantaa |
 | 20.4. | 3 | elokuvien lisäämisen suunnittelua ja tekoa |
 | 21.1. | 5 | aiemman korjailua, elokuvien listauksen ja lisäämisen ja arvioinnin tekoa, testien kirjoittamista, dokumentaation päivitys |
-|yht| 25 | |
+| 25.4. | 2 | tietokannan muokkausta hiukan ja yritystä tehdä testejä |
+| 27.4. | 3 | elokuville uutta toimitoa, genren ja muistiinpanojen lisäys |
+| 28.4. | 5 | docsting-dokumentoinnin aloitus, alustava arkkitehtuurikuvaus, käyttöohjeiden luonti, testejä, ja uuden toiminnon viimeistelyä |
+|yht| 35 | |
