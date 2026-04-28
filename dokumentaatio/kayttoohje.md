@@ -17,6 +17,8 @@ poetry run invoke start
 ## Kirjautuminen
 Kun sovellus käynnistyy, se avautuu kirjautumisnäkymään:
 
+![](./kuvat/kayttooje-kirjautuminen.png)
+
 Sisäänkirjautumaan pääsee kirjoittamalla olemassaoleva käyttäjätunnus ja salasana syötekenttiin ja painamalla "Login" painiketta.
 
 ## Uuden käyttäjän luominen
@@ -24,11 +26,15 @@ Sisäänkirjautumaan pääsee kirjoittamalla olemassaoleva käyttäjätunnus ja 
 Kirjautumisnäkymästä voi siirtyä uuden käyttäjän luomisnäkymään "Create user" painikkeella.
 Uusi käyttäjä luodaan syöttämällä käyttäjätunnus ja salasana syötekenttiin ja painamalla "Create user" painiketta:
 
+![](./kuvat/kayttoohje-kayttajan-luominen.png)
+
 Jos uuden käyttäjän luominen onnistuu, siirrytään näkymään, joka listaa nähdyt ja näkemättömät elokuvat.
 
 ## Elokuvien luominen ja arvostelu
 
 Kun kirjautuminen onnistuu, siirrytään näkymään, josta löytyy lisätyt elokuvat:
+
+![](./kuvat/kayttoohje-elokuvien-arvioiminen.png)
 
 Näkymässä käyttäjä voi lisätä uusia elokuvia, ensimmäiseen syötekenttään elokuvan nimi ja toiseen voi halutessaan laittaa vuoden.
 "More" painikkeella avautuu mahdollisuus lisätä elokuvalle genre ja kirjoittaa ylös muita tietoja. 
