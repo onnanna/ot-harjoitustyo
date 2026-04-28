@@ -30,7 +30,7 @@ Perusversion jälkeen järjestelmää voidaan täydennetää esim. seuraavanlais
 - Elokuvan tietojen muokkaaminen
 - Elokuvien järjestely arvostelujen mukaan
 - Listojen muuttaminen julkisiksi (näkyy muille käyttäjille) tai listan pitäminen yksityisenä
-- Mahdollisuus lisätä elokuvaan tarkempia tietoja elokuvasta
+- "tehty" Mahdollisuus lisätä elokuvaan tarkempia tietoja elokuvasta, genre ja muistiinpanoja
 - Käyttäjätunnuksen poistaminen
 - Listojen poistaminen
 - Mahdollisuus järjestellä elokuvia esim. katsomispäivän tai -vuoden mukaan
