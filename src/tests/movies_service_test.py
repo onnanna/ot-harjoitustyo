@@ -138,6 +138,14 @@ class TestMovieService(unittest.TestCase):
             lambda: self.movies_service.login("testaus", "väärä")
         )
     
+    def test_create_user_without_login(self):
+        username = "matti"
+        password = "matti123"
+        self.movies_service.create_user(username, password, login=False)
+        user = self.movies_service.get_current_user()
+
+        self.assertIsNone(user)
+    
     def test_logout(self):
         self.movies_service.create_user(self.user_matti.username, self.user_matti.password)
         self.movies_service.login(self.user_matti.username, self.user_matti.password)
@@ -162,7 +170,16 @@ class TestMovieService(unittest.TestCase):
         self.assertEqual(movie.stars, 3)
         self.assertTrue(movie.seen)
 
+    def test_set_stars_for_movie_with_invalid_stars(self):
+        self.login_user(self.user_matti)
+        movie = self.movies_service.create_movie(self.movie_1)
+
+        self.movies_service.set_stars_for_movie(movie.id, "10")
+
+        self.assertEqual(movie.stars, 0)
+
+
     def test_get_seen_movies_empty_list(self):
-        movie = self.movies_service.create_movie(self.movie_2)
+        self.movies_service.create_movie(self.movie_2)
         seen_movies = self.movies_service.get_seen_movies()
         self.assertEqual(seen_movies, [])

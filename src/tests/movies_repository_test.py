@@ -34,6 +34,13 @@ class TestMoviesRepository(unittest.TestCase):
 
         self.assertEqual(movies[0].seen, True)
     
+    def test_set_seen_with_nonexisting_id(self):
+        movies_repository.create(self.movie_2)
+        movies_repository.set_seen("id")
+
+        self.assertFalse(self.movie_2.seen)
+
+    
     def test_set_stars(self):
         new_movie = movies_repository.create(self.movie_1)
 
@@ -43,6 +50,12 @@ class TestMoviesRepository(unittest.TestCase):
         movies = movies_repository.find_all()
 
         self.assertEqual(movies[0].stars, 3)
+    
+    def test_set_stars_with_non_existing_id(self):
+        movies_repository.create(self.movie_1)
+        movies_repository.set_stars("id", 5)
+
+        self.assertEqual(self.movie_1.stars, 0)
 
     def test_find_by_username(self):
         matti = user_repository.create(self.user_matti)
