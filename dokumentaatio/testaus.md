@@ -12,8 +12,8 @@ Sovelluslogiikkaa testataan [TestMovieService](https://github.com/onnanna/ot-har
 `MoviesRepository`-luokkaa testataan testiluokalla [TestMoviesRepository](https://github.com/onnanna/ot-harjoitustyo/blob/main/src/tests/movies_repository_test.py) ja `UserRepository`-luokkaa testataan testiluokalla [TestUserRepository](https://github.com/onnanna/ot-harjoitustyo/blob/main/src/tests/user_repository_test.py)
 
 ### Testikattavuus
-Sovelluksen testauksen haaraumakattavuus on 95% lukuunottamatta käyttöliittymäkerrosta.
-![](.kuvat/testikattavuus.png)
+Sovelluksen testauksen haaraumakattavuus on 93% lukuunottamatta käyttöliittymäkerrosta.
+![](./kuvat/testikattavuus.png)
 
 ## Järjestelmätestaus
 
