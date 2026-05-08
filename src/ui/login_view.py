@@ -2,7 +2,18 @@ from tkinter import ttk, StringVar, constants
 from services.movies_service import InvalidCredentialsError
 
 class LoginView:
+    """Käyttäjään kirjautumisesta vastaava näkymä."""
     def __init__(self, root, handle_login, handle_show_create_user_view=None):
+        """Luokan konstruktori. Luo uuden näkymän kirjautumiselle.
+
+        Args:
+            root:
+                Tkinter-elementti, jonka sisään alustetaan näkymä
+            hande_login:
+                Kutsuttava-arvo, jota kutsutaan käyttäjän kirjautuessa sisään
+            handle_show_create_user_view:
+                Kutstuttava-arvo, jota kutsutaan siirryttäessä rekisteröitymisnäkymään
+        """
         self._root = root
         self._handle_login = handle_login
         self._handle_show_create_user_view = handle_show_create_user_view
@@ -50,9 +61,11 @@ class LoginView:
         self._hide_error()
     
     def pack(self):
+        """Näyttää näkymän"""
         self._frame.pack(fill=constants.X)
     
     def destroy(self):
+        """Tuhoaa näkymän"""
         self._frame.destroy()
     
     def _login_handler(self):

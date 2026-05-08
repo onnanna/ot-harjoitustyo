@@ -1,8 +1,21 @@
+import tkinter as tk
 from tkinter import ttk, constants
 from services.movies_service import movies_service
 
 class MoviesListView:
+    """Elokuvien listauksesta vastaava näkymä"""
+
     def __init__(self, root, movies, handle_movie_set_stars, show_dropdown=True):
+        """Luokan konstruktori. Luo uuden näkymän elokuvista
+        
+        Args:
+            root:
+                Tkinter-elementti, jonka sisään näkymä alustetaan
+            movies:
+                Lista Movies-olioita, jotka näytetää näkymässä
+            handle_movie_set_stars:
+                Kutsuttava-arvo, jota kutsutaan kun elokuva merkitään nähdyksi.
+        """
         self._root = root
         self._movies = movies
         self._handle_movie_set_stars = handle_movie_set_stars
@@ -12,9 +25,11 @@ class MoviesListView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän"""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän"""
         self._frame.destroy()
 
     def _initialize_movie_item(self, movie):
@@ -74,13 +89,24 @@ class MoviesListView:
             self._initialize_movie_item(movie)
 
 class MoviesView:
+    """Elokuvien listauksesta ja lisäämisestä vastaava näkymä"""
     def __init__(self, root, handle_logout):
+        """Luokan konstruktori. Luo uuden näkymän elokuvista
+
+        Args:
+            root:
+                Tkinter-elementti, jonka sisään näkymä alustetaan
+            handle_logout:
+                Kutsuttava-arvo, jota kutsutaan kun käyttäjä kirjautuu ulos
+        """
         self._root = root
         self._handle_logout = handle_logout
         self._user = movies_service.get_current_user()
         self._frame = None
         self._create_movie_title_entry = None
         self._create_movie_year_entry = None
+        self._title_placeholder = "Title (required)"
+        self._year_placeholder = "Year"
         self._title_label = None
         self._year_label = None
         self._movie_list_frame = None
@@ -95,15 +121,35 @@ class MoviesView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän"""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän"""
         self._frame.destroy()
 
     def _logout_handler(self):
         movies_service.logout()
         self._handle_logout()
-       
+
+    #tekoälyn koodi alkaa
+    def _set_entry_placeholder(self, entry, placeholder):
+        entry.delete(0, constants.END)
+        entry.insert(0, placeholder)
+        entry.configure(foreground="grey")
+
+    def _clear_entry_placeholder(self, event, placeholder):
+        entry = event.widget
+        if entry.get() == placeholder:
+            entry.delete(0, constants.END)
+            entry.configure(foreground="black")
+
+    def _restore_entry_placeholder(self, event, placeholder):
+        entry = event.widget
+        if not entry.get().strip():
+            self._set_entry_placeholder(entry, placeholder)
+    #tekoälyn koodi loppuu
+
     def _handle_set_movie_stars(self, movie_id, stars):
         movies_service.set_stars_for_movie(movie_id, stars)
         self._initialize_movie_list()
@@ -176,6 +222,12 @@ class MoviesView:
     def _handle_create_movie(self):
         movie_title = self._create_movie_title_entry.get().strip()
         movie_year = self._create_movie_year_entry.get().strip()
+        #tekoälyn koodi alkaa
+        if movie_title == self._title_placeholder:
+            movie_title = ""
+        if movie_year == self._year_placeholder:
+            movie_year = ""
+        #tekoälyn koodi loppuu
         genre = self._create_movie_genre.get() if self._create_movie_genre else None
         notes = self._create_movie_notes.get() if self._create_movie_notes else None
 
@@ -184,14 +236,18 @@ class MoviesView:
 
         movies_service.create_movie(movie_title, movie_year or None, genre or None, notes or None)
         self._initialize_movie_list()
-        self._create_movie_title_entry.delete(0, constants.END)
-        self._create_movie_year_entry.delete(0, constants.END)
+        #tekoälyn koodi alkaa
+        self._set_entry_placeholder(self._create_movie_title_entry, self._title_placeholder)
+        self._set_entry_placeholder(self._create_movie_year_entry, self._year_placeholder)
         self._create_movie_genre.set("")
         self._create_movie_notes.delete(0, constants.END)
+        #tekoälyn koodi loppuu
 
     def _initialize_footer(self):
-        self._create_movie_title_entry = ttk.Entry(master=self._frame)
-        self._create_movie_year_entry = ttk.Entry(master=self._frame)
+        #tekoälyn koodi alkaa
+        self._create_movie_title_entry = tk.Entry(master=self._frame)
+        self._create_movie_year_entry = tk.Entry(master=self._frame)
+        #tekoälyn koodi loppuu
         button_frame = ttk.Frame(master=self._frame)
 
         create_movie_button = ttk.Button(
@@ -218,6 +274,26 @@ class MoviesView:
             pady=5,
             sticky=constants.EW
         )
+        #tekoälyn koodi alkaa
+        self._set_entry_placeholder(self._create_movie_title_entry, self._title_placeholder)
+        self._set_entry_placeholder(self._create_movie_year_entry, self._year_placeholder)
+        self._create_movie_title_entry.bind(
+            "<FocusIn>",
+            lambda event: self._clear_entry_placeholder(event, self._title_placeholder)
+        )
+        self._create_movie_title_entry.bind(
+            "<FocusOut>",
+            lambda event: self._restore_entry_placeholder(event, self._title_placeholder)
+        )
+        self._create_movie_year_entry.bind(
+            "<FocusIn>",
+            lambda event: self._clear_entry_placeholder(event, self._year_placeholder)
+        )
+        self._create_movie_year_entry.bind(
+            "<FocusOut>",
+            lambda event: self._restore_entry_placeholder(event, self._year_placeholder)
+        )
+        #tekoälyn koodi loppuu
         create_movie_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
         more_button.grid(
             row=0,

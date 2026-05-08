@@ -7,7 +7,6 @@ def main():
 
     window = Tk()
     window.title("Movie Watchlist")
-
     ui_view = UI(window)
     ui_view.start()
 

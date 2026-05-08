@@ -6,5 +6,5 @@ class TestCreateNewUserView(unittest.TestCase):
         self.ui = UI(None)
 
     def test_show_create_new_user_view(self):
-        self.ui.show_create_user_view()
+        self.ui._show_create_user_view()
         self.assertIsNotNone(self.ui._current_view)

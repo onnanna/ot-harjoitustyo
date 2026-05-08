@@ -1,4 +1,5 @@
 import unittest
+from repositories import movies_repository
 from ui.ui import UI
 from entities.movies import Movies
 from entities.user import User
@@ -31,6 +32,12 @@ class FakeMovieRepository:
         for movie in self.movies:
             if movie.id == movie_id:
                 movie.seen = seen
+                break
+
+    def set_stars(self, movie_id, stars):
+        for movie in self.movies:
+            if movie.id == movie_id:
+                movie.stars = stars
                 break
 
 
@@ -112,7 +119,7 @@ class TestMovieService(unittest.TestCase):
             UsernameAlreadyExistsError,
             lambda: self.movies_service.create_user(username, "jokumuusalasana")
         )
-    
+
     def test_login_with_valid_username_and_password(self):
         self.movies_service.create_user(
             self.user_matti.username,
@@ -137,4 +144,25 @@ class TestMovieService(unittest.TestCase):
         self.movies_service.logout()
         
         self.assertIsNone(self.movies_service.get_current_user())
-        
+
+    def test_get_unseen_movies_without_user(self):
+        movies = self.movies_service.get_unseen_movies()
+
+        self.assertEqual(movies, [])
+
+    def test_set_stars_for_movie_with_valid_stars(self):
+        self.login_user(self.user_matti)
+        movie = self.movies_service.create_movie(self.movie_1)
+
+        self.assertEqual(movie.stars, 0)
+        self.assertFalse(movie.seen)
+
+        self.movies_service.set_stars_for_movie(movie.id, "3")
+
+        self.assertEqual(movie.stars, 3)
+        self.assertTrue(movie.seen)
+
+    def test_get_seen_movies_empty_list(self):
+        movie = self.movies_service.create_movie(self.movie_2)
+        seen_movies = self.movies_service.get_seen_movies()
+        self.assertEqual(seen_movies, [])

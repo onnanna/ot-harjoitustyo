@@ -2,7 +2,16 @@ from tkinter import ttk, StringVar, constants
 from services.movies_service import movies_service, UsernameAlreadyExistsError
 
 class CreateUserView:
+    """Käyttäjän rekisteröitymisestä vastaava näkymä."""
     def __init__(self, root, handle_show_login_view):
+        """Luokan konstruktori. Luo uuden näkymän rekisteröitymiselle.
+
+        Args:
+            root:
+                Tkinter-elementti, jonka sisään alustetaan näkymä
+            handle_show_login_view:
+                Kutsuttava-arvo, jota kutsutaan, kun halutaan siirtyä takaisin login-näkymään
+        """
         self._root = root
         self._handle_show_login_view = handle_show_login_view
         self._frame = None
@@ -49,9 +58,11 @@ class CreateUserView:
         self._hide_error()
     
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
     
     def _hide_error(self):
@@ -67,6 +78,14 @@ class CreateUserView:
 
         if len(username) == 0 or len(password) == 0:
             self._show_error("Username and password is required")
+            return
+
+        if len(username) < 3:
+            self._show_error("Username must be at least 3 characters long")
+            return
+
+        if len(password) < 5:
+            self._show_error("Password must be at least 5 characters long")
             return
 
         try:

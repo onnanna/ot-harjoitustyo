@@ -62,7 +62,7 @@ class MoviesService:
         self._user = None
 
     def create_user(self, username, password, login=True):
-        """Luo uuden käyttäjän ja kirjaa sen sisään tarvittaessa.
+        """Luo uuden käyttäjän
 
         Args:
             username: Merkkijonoarvo, joka kuvastaa käyttäjän käyttäjätunnusta.

@@ -6,10 +6,17 @@ from services.movies_service import movies_service
 class UI:
     """Sovelluksen käyttöliittymästä vastaava luokka."""
     def __init__(self, root):
+        """Luokan konstruktori. Luo uuden käyttöliittymästä vastaavan luokan
+
+        Args:
+            root:
+                Tkinter-elementti, jonka sisään käyttöliittymä alustetaan
+        """
         self._root = root
         self._current_view = None
     
     def start(self):
+        """Käynnistää käyttöliittymän"""
         self._show_login_view()
     
     def _hide_current_view(self):
@@ -20,11 +27,11 @@ class UI:
 
     def _show_login_view(self):
         self._hide_current_view()
-        self._current_view = LoginView(self._root, self._handle_login, self.show_create_user_view)
+        self._current_view = LoginView(self._root, self._handle_login, self._show_create_user_view)
 
         self._current_view.pack()
 
-    def show_create_user_view(self):
+    def _show_create_user_view(self):
         self._hide_current_view()
         self._current_view = CreateUserView(self._root, self._show_login_view)
         self._current_view.pack()
