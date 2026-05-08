@@ -1,5 +1,15 @@
 # Käyttöohje
 
+Lataa projektin viimeisimmän releasen lähdekoodi valitsemalla _Assets_ osion alta _Source code_.
+
+## Konfigurointi
+
+Tallennukseen käytettävät tiedostot luodaan automaattisesti _data_ hakemistoon, jos ne eivät siellä vielä ole. Tiedoston muoto on:
+```
+MOVIES_FILE_NAME=movies.csv
+DATABASE_FILENAME=database.sqlite
+```
+
 ## Ohjelman käynnistäminen
 Ennen ohjelman käynnistämistä, asenna riippuvuudet:
 ```bash
@@ -24,6 +34,7 @@ Sisäänkirjautumaan pääsee kirjoittamalla olemassaoleva käyttäjätunnus ja 
 ## Uuden käyttäjän luominen
 
 Kirjautumisnäkymästä voi siirtyä uuden käyttäjän luomisnäkymään "Create user" painikkeella.
+
 Uusi käyttäjä luodaan syöttämällä käyttäjätunnus ja salasana syötekenttiin ja painamalla "Create user" painiketta:
 
 ![](./kuvat/kayttoohje-kayttajan-luominen.png)
@@ -34,7 +45,7 @@ Jos uuden käyttäjän luominen onnistuu, siirrytään näkymään, joka listaa 
 
 Kun kirjautuminen onnistuu, siirrytään näkymään, josta löytyy lisätyt elokuvat:
 
-![](./kuvat/kayttoohje-elokuvien-arvioiminen.png)
+![](./kuvat/kayttoohje-elokuvien-arvostelu.png)
 
 Näkymässä käyttäjä voi lisätä uusia elokuvia, ensimmäiseen syötekenttään elokuvan nimi ja toiseen voi halutessaan laittaa vuoden.
 "More" painikkeella avautuu mahdollisuus lisätä elokuvalle genre ja kirjoittaa ylös muita tietoja. 
