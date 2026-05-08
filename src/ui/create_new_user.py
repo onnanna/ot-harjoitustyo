@@ -93,7 +93,6 @@ class CreateUserView:
             self._handle_show_login_view()
         except UsernameAlreadyExistsError:
             self._show_error(f"Username {username} already exists")
-            self._handle_show_login_view()
 
     def _initialize_username_field(self):
         username_label = ttk.Label(master=self._frame, text="Username")
