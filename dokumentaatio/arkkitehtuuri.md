@@ -78,3 +78,8 @@ sequenceDiagram
   MoviesService-->>UI: user
   UI->UI: show_movies_view()
 ```
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+Sovelluksen tietojen pysyväistallennus, myös elokuvien tietojen tallennus voisi toteuttaa SQLite-tietokantaan.
+
+Käyttöliittymän koodissa luokat `CreateUserView` ja `LoginView` ovat hyvin samankaltaiset.
