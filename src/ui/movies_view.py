@@ -16,6 +16,7 @@ class MoviesListView:
             handle_movie_set_stars:
                 Kutsuttava-arvo, jota kutsutaan kun elokuva merkitään nähdyksi.
         """
+
         self._root = root
         self._movies = movies
         self._handle_movie_set_stars = handle_movie_set_stars
@@ -318,10 +319,10 @@ class MoviesView:
             state="readonly"
         )
         self._create_movie_genre.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
-        
+
         notes_label = ttk.Label(master=self._more_frame, text="Notes:")
         notes_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
-        
+
         self._create_movie_notes = ttk.Entry(master=self._more_frame, width=30)
         self._create_movie_notes.grid(
             row=1, 

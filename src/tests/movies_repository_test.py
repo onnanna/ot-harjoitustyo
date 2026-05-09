@@ -29,7 +29,6 @@ class TestMoviesRepository(unittest.TestCase):
         self.assertEqual(movies[0].seen, False)
 
         movies_repository.set_seen(added_movie.id)
-
         movies = movies_repository.find_all()
 
         self.assertEqual(movies[0].seen, True)

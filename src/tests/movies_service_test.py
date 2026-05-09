@@ -9,7 +9,6 @@ from services.movies_service import (
     UsernameAlreadyExistsError
 )
 
-
 class FakeMoviesRepository:
     def __init__(self, movies=None):
         self.movies = movies or []
@@ -57,6 +56,7 @@ class FakeUserRepository:
     def create(self, user):
         self.users.append(user)
         return user
+
 
 class TestMovieService(unittest.TestCase):
     def setUp(self):
@@ -109,6 +109,7 @@ class TestMovieService(unittest.TestCase):
     def test_get_current_user(self):
         self.login_user(self.user_matti)
         current_user = self.movies_service.get_current_user()
+
         self.assertEqual(current_user.username, self.user_matti.username)
 
     def test_create_user_with_existing_username(self):
@@ -130,6 +131,7 @@ class TestMovieService(unittest.TestCase):
             self.user_matti.username,
             self.user_matti.password
         )
+
         self.assertEqual(user.username, self.user_matti.username)
 
     def test_login_with_invalid_username_and_password(self):
@@ -182,4 +184,5 @@ class TestMovieService(unittest.TestCase):
     def test_get_seen_movies_empty_list(self):
         self.movies_service.create_movie(self.movie_2)
         seen_movies = self.movies_service.get_seen_movies()
+
         self.assertEqual(seen_movies, [])

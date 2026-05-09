@@ -81,6 +81,7 @@ class MoviesRepository:
         Returns:
             Tallennettu elokuva Movies-oliona.
         """
+
         movies = self.find_all()
         movies.append(movie)
         self._write(movies)
@@ -110,6 +111,7 @@ class MoviesRepository:
                 Vapaaehtoinen, oletusarvoltaan True
                 Boolean-arvo, joka kuvaa asetetaanko elokuva nähdyksi vai ei
         """
+
         movies = self.find_all()
         for movie in movies:
             if movie.id == movie_id:
@@ -134,6 +136,7 @@ class MoviesRepository:
     def delete_all(self):
         """Poistaa kaikki elokuvat.
         """
+
         self._write([])
 
 movies_repository = MoviesRepository(MOVIES_FILE_PATH)

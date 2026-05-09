@@ -29,6 +29,7 @@ class MoviesService:
                 Vapaaehtoinen, oleturarvoltaan UserRepository-olio.
                 Olio, jolla on UserRepository-luokkaa vastaavat metodit.
         """
+
         self._user = None
         self._movies_repository = movies_repository
         self._user_repository = user_repository
@@ -52,8 +53,8 @@ class MoviesService:
 
         if not user or user.password != password:
             raise InvalidCredentialsError("Invalid username or password")
-
         self._user = user
+
         return user
 
     def logout(self):
@@ -62,7 +63,7 @@ class MoviesService:
         self._user = None
 
     def create_user(self, username, password, login=True):
-        """Luo uuden käyttäjän
+        """Luo uuden käyttäjän.
 
         Args:
             username: Merkkijonoarvo, joka kuvastaa käyttäjän käyttäjätunnusta.
@@ -105,6 +106,7 @@ class MoviesService:
         Args:
             movie_id: Merkkiarvojono, joka kuvaa elokuvan id:tä.
         """
+
         self._movies_repository.set_seen(movie_id, True)
 
     def get_unseen_movies(self):
@@ -114,6 +116,7 @@ class MoviesService:
             Palauttaa kirjautuneen käyttäjän näkemättömät elokuvat Movie-olioiden listana.
             Jos ei ole kirjautunutta käyttäjää, palauttaa tyhjän listan.
         """
+
         if not self._user:
             return []
 
@@ -129,6 +132,7 @@ class MoviesService:
             Palauttaa kirjautuneen käyttäjän näkemät elokuvat Movie-olioiden listana.
             Jos ei ole kirjautunutta käyttäjää, palauttaa tyhjän listan.
         """
+
         if not self._user:
             return []
 
@@ -164,6 +168,7 @@ class MoviesService:
         Returns:
             Luotu elokuva Movie-oliona.
         """
+
         movie = Movies(
             title=title,
             year=year,
@@ -171,6 +176,7 @@ class MoviesService:
             notes=notes,
             user=self._user
         )
+
         return self._movies_repository.create(movie)
 
 movies_service = MoviesService()

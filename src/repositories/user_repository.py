@@ -68,6 +68,7 @@ class UserRepository:
     def delete_everyone(self):
         """Poistaa kaikki käyttäjät.
         """
+
         cursor = self._connection.cursor()
         cursor.execute("delete from users")
         self._connection.commit()

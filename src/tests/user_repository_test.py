@@ -13,7 +13,6 @@ class TestUserRepository(unittest.TestCase):
         users = user_repository.find_everyone()
 
         self.assertEqual(len(users), 1)
-
         self.assertEqual(users[0].username, self.user_matti.username)
 
     def test_find_everyone(self):

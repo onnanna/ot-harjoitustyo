@@ -12,6 +12,7 @@ class CreateUserView:
             handle_show_login_view:
                 Kutsuttava-arvo, jota kutsutaan, kun halutaan siirtyä takaisin login-näkymään
         """
+
         self._root = root
         self._handle_show_login_view = handle_show_login_view
         self._frame = None
