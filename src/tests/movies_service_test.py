@@ -10,7 +10,7 @@ from services.movies_service import (
 )
 
 
-class FakeMovieRepository:
+class FakeMoviesRepository:
     def __init__(self, movies=None):
         self.movies = movies or []
     
@@ -61,7 +61,7 @@ class FakeUserRepository:
 class TestMovieService(unittest.TestCase):
     def setUp(self):
         self.movies_service = MoviesService(
-            FakeMovieRepository(),
+            FakeMoviesRepository(),
             FakeUserRepository())
     
         self.movie_1 = Movies("test 1", 2020)
