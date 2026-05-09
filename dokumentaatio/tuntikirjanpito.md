@@ -14,4 +14,7 @@
 | 25.4. | 2 | tietokannan muokkausta hiukan ja yritystä tehdä testejä |
 | 27.4. | 3 | elokuville uutta toimitoa, genren ja muistiinpanojen lisäys |
 | 28.4. | 5 | docsting-dokumentoinnin aloitus, alustava arkkitehtuurikuvaus, käyttöohjeiden luonti, testejä, ja uuden toiminnon viimeistelyä |
-|yht| 35 | |
+| 6.5. | 3 | docstring-dokumentointi loppuun, testejen korjausta ja yritystä tehdä parempia testejä |
+| 8.5. | 6 | elokuvanlisäykseen placeholderilta näyttävät elementit, vaatimusmäärittelyn päivitys, testausdokumentin tekoa, dokumentaation päivitystä, bugin korjaus samannimisten käyttäjien lisäykseen |
+| 9.5. | 3 | dokumentaation päivitys ja viimeistely |
+|yht| 47 | |
