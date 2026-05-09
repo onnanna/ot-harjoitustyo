@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin viimeisimmän releasen lähdekoodi valitsemalla _Assets_ osion alta _Source code_.
+Lataa projektin viimeisimmän [releasen](https://github.com/onnanna/ot-harjoitustyo/releases) lähdekoodi valitsemalla _Assets_ osion alta _Source code_.
 
 ## Konfigurointi
 
