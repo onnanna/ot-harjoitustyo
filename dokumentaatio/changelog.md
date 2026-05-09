@@ -22,3 +22,7 @@
 - Käyttäjä voi lisätä elokuvalle genren
 - Käyttäjä voi lisätä muistiinpanoja elokuvan luomisvaiheessa
 - Testejä lisää
+
+## Viikko 7
+- Elokuvan lisäykseen placeholder elokuvan nimelle ja julkaisuvuodelle
+- Käyttäjä saa virheilmoituksen, jos yrittää luoda käyttäjää jo olemassa olevalla käyttäjänimellä
